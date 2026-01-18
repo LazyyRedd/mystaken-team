@@ -48,12 +48,22 @@ html {
     border-radius: 4px;
 }
 
+/* ===== CUSTOM CROSSHAIR CURSOR ===== */
 body {
     font-family: var(--font-primary);
     background-color: var(--bg-dark);
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    cursor: crosshair;
+}
+
+a, button, .btn, .nav-link, .player-card, .staff-card, .creator-card, .team-badge, .join-card {
+    cursor: crosshair;
+}
+
+a:hover, button:hover, .btn:hover {
+    cursor: crosshair;
 }
 
 a {
