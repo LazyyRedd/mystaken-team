@@ -106,7 +106,6 @@ img {
     width: 100px;
     height: 100px;
     animation: pulse 1.5s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px rgba(200, 16, 46, 0.8));
 }
 
 .loader-bar {
@@ -175,7 +174,6 @@ img {
     width: 45px;
     height: 45px;
     object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(200, 16, 46, 0.6));
 }
 
 .nav-logo span {
@@ -363,7 +361,6 @@ img {
 }
 
 .hero-content img {
-    filter: drop-shadow(0 0 20px rgba(200, 16, 46, 0.5));
 }
 
 .hero-logo {
@@ -567,7 +564,6 @@ section {
     width: 100%;
     max-width: 350px;
     margin: 0 auto;
-    filter: drop-shadow(0 0 50px rgba(200, 16, 46, 0.6));
 }
 
 .about-image-border {
@@ -1150,7 +1146,6 @@ section {
     width: 80px;
     height: 80px;
     margin-bottom: 20px;
-    filter: drop-shadow(0 0 15px rgba(200, 16, 46, 0.6));
 }
 
 .footer-brand h3 {
