@@ -1071,6 +1071,118 @@ section {
     color: var(--primary-red);
 }
 
+/* ===== CREATORS SECTION ===== */
+.creators {
+    background: var(--bg-dark);
+}
+
+.creators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.creator-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition-normal);
+}
+
+.creator-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-red);
+    box-shadow: var(--shadow-red);
+}
+
+.creator-image {
+    position: relative;
+    height: 280px;
+    background: linear-gradient(135deg, var(--bg-card-hover) 0%, var(--bg-darker) 100%);
+    overflow: hidden;
+}
+
+.creator-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: var(--transition-normal);
+}
+
+.creator-card:hover .creator-avatar {
+    transform: scale(1.05);
+}
+
+.creator-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(200, 16, 46, 0.9), rgba(255, 215, 0, 0.7));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.creator-card:hover .creator-overlay {
+    opacity: 1;
+}
+
+.creator-social {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--text-primary);
+    border-radius: 50%;
+    color: var(--bg-darker);
+    font-size: 1.3rem;
+    transition: var(--transition-normal);
+}
+
+.creator-social:hover {
+    transform: scale(1.15);
+    background: #FFD700;
+}
+
+.creator-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.creator-name {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.creator-quote {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.creators-note {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
 /* ===== ROSTER SECTION ===== */
 .teams {
     background: var(--bg-dark);
