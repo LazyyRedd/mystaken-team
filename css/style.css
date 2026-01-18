@@ -724,38 +724,77 @@ img {
     color: #FFFFFF;
     text-transform: uppercase;
     position: relative;
-    -webkit-text-stroke: 3px #C8102E;
-    text-shadow: 
-        0 0 10px rgba(200, 16, 46, 0.5),
-        0 0 20px rgba(200, 16, 46, 0.3),
-        4px 4px 0 #C8102E;
-    animation: title-glow 3s ease-in-out infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Stroke Outline Effect - Red & White */
+/* Call of Duty Style Effect */
 .glitch {
     position: relative;
+    animation: cod-flicker 8s infinite;
 }
 
-.glitch::before,
+.glitch::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5%;
+    width: 110%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 45%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.1) 55%,
+        transparent 100%
+    );
+    animation: cod-shine 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
 .glitch::after {
-    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 2px,
+        rgba(0, 0, 0, 0.1) 4px
+    );
+    pointer-events: none;
+    opacity: 0.5;
 }
 
-@keyframes title-glow {
-    0%, 100% { 
-        text-shadow: 
-            0 0 10px rgba(200, 16, 46, 0.5),
-            0 0 20px rgba(200, 16, 46, 0.3),
-            4px 4px 0 #C8102E;
+@keyframes cod-shine {
+    0%, 100% {
+        transform: translateX(-100%);
+        opacity: 0;
     }
-    50% { 
-        text-shadow: 
-            0 0 20px rgba(200, 16, 46, 0.8),
-            0 0 40px rgba(200, 16, 46, 0.5),
-            0 0 60px rgba(200, 16, 46, 0.3),
-            4px 4px 0 #C8102E;
+    10% {
+        opacity: 1;
     }
+    30% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    31%, 100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes cod-flicker {
+    0%, 100% { opacity: 1; }
+    92% { opacity: 1; }
+    93% { opacity: 0.8; }
+    94% { opacity: 1; }
+    96% { opacity: 0.9; }
+    97% { opacity: 1; }
 }
 
 .hero-subtitle {
@@ -766,8 +805,7 @@ img {
     color: #C8102E;
     margin-bottom: 15px;
     text-transform: uppercase;
-    -webkit-text-stroke: 1px #FFFFFF;
-    text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-tagline {
