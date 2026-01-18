@@ -89,7 +89,7 @@ npx serve
 
 - Twitter/X: [@MystakenEsports](https://x.com/MystakenEsports)
 - Instagram: [@mystaken_org](https://www.instagram.com/mystaken_org/)
-- Discord: [Linktree](https://linktr.ee/mystakenesports)
+- Discord: [Linktree](https://discord.com/invite/AUsSRUKHpq)
 
 ## 📄 2025 Major 2 Roster (COD)
 
