@@ -1,13 +1,81 @@
 // ===== MYSTAKEN ESPORTS - Main JavaScript =====
 
 document.addEventListener('DOMContentLoaded', function() {
-    // ===== PRELOADER =====
+    // ===== TACTICAL PRELOADER =====
     const preloader = document.getElementById('preloader');
+    const progressPercent = document.querySelector('.progress-percent');
+    const intelText = document.querySelector('.intel-text');
+    const statusLabel = document.querySelector('.status-label');
     
+    // Intel messages to cycle through
+    const intelMessages = [
+        'ESTABLISHING SECURE CONNECTION',
+        'VERIFYING CREDENTIALS',
+        'LOADING TACTICAL DATA',
+        'SYNCING WITH HQ',
+        'DEPLOYING ASSETS',
+        'INITIALIZING COMBAT SYSTEMS',
+        'CALIBRATING TARGETING',
+        'CONNECTION ESTABLISHED'
+    ];
+    
+    // Status messages
+    const statusMessages = [
+        'DEPLOYING OPERATIVE',
+        'STANDBY FOR DEPLOYMENT',
+        'ENTERING THE WARZONE',
+        'SYSTEMS ONLINE'
+    ];
+    
+    let progress = 0;
+    let intelIndex = 0;
+    let statusIndex = 0;
+    
+    // Animate progress percentage
+    const progressInterval = setInterval(function() {
+        if (progress < 100) {
+            progress += Math.random() * 8 + 2;
+            if (progress > 100) progress = 100;
+            if (progressPercent) {
+                progressPercent.textContent = Math.floor(progress) + '%';
+            }
+        }
+    }, 150);
+    
+    // Cycle intel messages
+    const intelInterval = setInterval(function() {
+        if (intelText) {
+            intelIndex = (intelIndex + 1) % intelMessages.length;
+            intelText.style.opacity = '0';
+            setTimeout(() => {
+                intelText.textContent = intelMessages[intelIndex];
+                intelText.style.opacity = '1';
+            }, 100);
+        }
+    }, 400);
+    
+    // Cycle status messages
+    const statusInterval = setInterval(function() {
+        if (statusLabel) {
+            statusIndex = (statusIndex + 1) % statusMessages.length;
+            statusLabel.textContent = statusMessages[statusIndex];
+        }
+    }, 800);
+    
+    // Hide preloader
     window.addEventListener('load', function() {
         setTimeout(function() {
-            preloader.classList.add('hidden');
-        }, 1500);
+            clearInterval(progressInterval);
+            clearInterval(intelInterval);
+            clearInterval(statusInterval);
+            if (progressPercent) progressPercent.textContent = '100%';
+            if (statusLabel) statusLabel.textContent = 'DEPLOYMENT COMPLETE';
+            if (intelText) intelText.textContent = 'WELCOME TO MYSTAKEN';
+            
+            setTimeout(function() {
+                preloader.classList.add('hidden');
+            }, 500);
+        }, 2500);
     });
 
     // ===== NAVBAR =====

@@ -8,14 +8,66 @@
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Preloader -->
+    <!-- Preloader - Call of Duty Scorestreak Style -->
     <div class="preloader" id="preloader">
+        <div class="preloader-scanlines"></div>
+        <div class="preloader-vignette"></div>
+        
+        <!-- HUD Corners -->
+        <div class="hud-corner hud-corner-tl"></div>
+        <div class="hud-corner hud-corner-tr"></div>
+        <div class="hud-corner hud-corner-bl"></div>
+        <div class="hud-corner hud-corner-br"></div>
+        
+        <!-- Main Content -->
         <div class="loader">
+            <!-- Tactical Circle -->
+            <div class="tactical-ring">
+                <div class="tactical-ring-inner"></div>
+                <div class="tactical-crosshair"></div>
+            </div>
+            
+            <!-- Logo -->
             <img src="assets/images/logo.png" alt="MYSTAKEN Logo" class="loader-logo">
-            <div class="loader-bar"></div>
+            
+            <!-- Status Text -->
+            <div class="loader-status">
+                <span class="status-label">DEPLOYING OPERATIVE</span>
+                <span class="status-dots">...</span>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="loader-progress">
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-percent">0%</div>
+            </div>
+            
+            <!-- Intel Text -->
+            <div class="loader-intel">
+                <span class="intel-prefix">[INTEL]</span>
+                <span class="intel-text">ESTABLISHING SECURE CONNECTION</span>
+            </div>
+        </div>
+        
+        <!-- Bottom HUD -->
+        <div class="hud-bottom">
+            <div class="hud-item">
+                <i class="fas fa-signal"></i>
+                <span>SIGNAL STRONG</span>
+            </div>
+            <div class="hud-item">
+                <i class="fas fa-shield-halved"></i>
+                <span>ENCRYPTION ACTIVE</span>
+            </div>
+            <div class="hud-item">
+                <i class="fas fa-satellite-dish"></i>
+                <span>UPLINK READY</span>
+            </div>
         </div>
     </div>
 
