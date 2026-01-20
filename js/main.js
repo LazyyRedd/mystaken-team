@@ -219,18 +219,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Simulate form submission
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-
-            setTimeout(function() {
-                showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
-                contactForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
+            // Build mailto link
+            const recipient = 'mystakenesport@gmail.com';
+            const subjectText = `[${data.subject}] Contact from ${data.name}`;
+            const bodyText = `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`;
+            
+            const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show notification and reset form
+            showNotification('Opening your email client...', 'success');
+            contactForm.reset();
         });
     }
 
